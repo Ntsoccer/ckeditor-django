@@ -1,0 +1,14 @@
+{% extends 'ckeditorapp/base.html' %}
+
+
+{% block content %}
+<a href="{%url 'ckeditorapp:index'%}">トップページに戻る</a>
+
+<form action="{% url 'ckeditorapp:add_form' %}" method="POST">
+  {% csrf_token %}
+  {{form.media}}
+  {{form.as_p}}
+  <button type="submit">投稿</button>
+</form>
+
+{% endblock content %}

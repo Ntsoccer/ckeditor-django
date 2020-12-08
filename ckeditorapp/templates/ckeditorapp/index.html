@@ -1,0 +1,20 @@
+{% extends 'ckeditorapp/base.html' %}
+
+
+{% block content %}
+<h1>一覧</h1>
+<br>
+
+<a href="{% url 'ckeditorapp:add_form' %}">追加&lt;</a>
+
+{% for post in post %}
+<ul>
+  <li>
+    {{post.created_at}}
+    {{post.title}}
+    <a href="{% url 'ckeditorapp:detail' post_id=post.id %}">詳細</a>
+  </li>
+</ul>
+{% endfor %}
+
+{% endblock content %}

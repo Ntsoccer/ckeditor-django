@@ -1,0 +1,11 @@
+{% extends 'ckeditorapp/base.html' %}
+
+
+{% block content %}
+<h1>{{post_text.title}}</h1>
+<p>{{post_text.updated_at}}</p>
+{{post_text.text | safe}}
+<br>
+
+<a href="{% url 'ckeditorapp:index' %}">トップページに戻る</a>
+{% endblock content %}
